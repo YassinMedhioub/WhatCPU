@@ -1,0 +1,173 @@
+.userInfo {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100px;
+
+    /* Added for dropdown positioning */
+    .user {
+        display: flex;
+        align-items: center;
+        /* Align the avatar and text vertically */
+        gap: 15px;
+        /* Space between the avatar and the text */
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* Make the avatar circular */
+            object-fit: cover;
+            /* Maintain the aspect ratio */
+        }
+
+        .progress-circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 10px solid rgba(255, 255, 255, 0.5);
+            clip-path: circle(50%);
+            transform: rotate(-90deg);
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(#4caf50 0%, #4caf50 var(--progress), transparent var(--progress), transparent 100%);
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        /* This will stack h3 and h5 vertically */
+        .user-info-text {
+            display: flex;
+            flex-direction: column;
+            /* Stack the username and bio vertically */
+            align-items: flex-start;
+            /* Align text to the left */
+            gap: 5px;
+            /* Space between the h3 and h5 */
+
+            h3 {
+                font-size: 1.2em;
+                margin: 0;
+            }
+
+            p {
+
+                margin: 0;
+            }
+        }
+    }
+
+
+
+    .icons {
+        display: flex;
+        gap: 20px;
+
+        img {
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgba(86, 184, 220, 0.5);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(163, 164, 219, 0.5);
+            }
+        }
+    }
+
+    /* Dropdown Menu Styling */
+    .dropdown {
+        position: absolute;
+        top: 70px;
+        /* Adjust depending on your layout */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        width: 150px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .dropdown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+
+    }
+
+    .dropdown li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+        color: black;
+    }
+
+    .dropdown li:hover {
+        background-color: #f0f0f0;
+    }
+
+    .dropdown li:last-child {
+        border-bottom: none;
+    }
+
+
+    .bio-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+    }
+
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        /* Set a width for the modal */
+
+        button {
+            width: 15vh;
+            height: 5vh;
+            margin-top: 5vh;
+            text-align: left;
+        }
+    }
+
+    textarea {
+        width: 100%;
+        margin: 10px 0;
+        resize: none;
+        /* Prevent resizing */
+    }
+
+}

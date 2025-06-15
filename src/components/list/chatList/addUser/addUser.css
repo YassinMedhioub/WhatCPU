@@ -1,0 +1,158 @@
+.addUserModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    /* Ensure it's on top */
+    .modalOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent background */
+    }
+
+    .addUser {
+        width: 80vh;
+        height: max-content;
+        padding: 30px;
+        background-color: rgba(10, 53, 69, 0.906);
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        .close-btn {
+            position: absolute;
+            top: 0vh;
+            padding: 0;
+            right: 2vh;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            transition: color 0.3s ease;
+            width: 4.5vh;
+            height: 4.5vh;
+            text-align: center;
+
+        }
+
+        form {
+            display: flex;
+            gap: 20px;
+            border-radius: 10px;
+            background-color: transparent;
+
+            input {
+                border-radius: 10px;
+                outline: none;
+            }
+        }
+
+        button {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 2vh 0 0 0;
+
+            &.disabled {
+                cursor: not-allowed;
+                animation: shake 0.5s ease-in-out;
+            }
+        }
+
+        .userListContainer {
+
+            width: 70vh;
+            max-height: 300px;
+            /* Set a fixed height for the container */
+            overflow-y: auto;
+            overflow-x: hidden;
+            /* Enable vertical scrolling */
+            padding-right: 50px;
+            /* Optional: Add padding to avoid scroll bar overlapping content */
+        }
+
+        .userList {
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user {
+            padding-right: 20px;
+            width: 70vh;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .detail {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                span {
+                    font-size: 14px;
+                    gap: 20px;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            button {
+                padding: 10px;
+                border-radius: 10px;
+                background-color: #1a73e8;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin-top: -2px;
+                margin-left: 20px;
+            }
+        }
+    }
+
+    /* Move @keyframes outside of the nested rules */
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-10px);
+        }
+
+        50% {
+            transform: translateX(10px);
+        }
+
+        75% {
+            transform: translateX(-10px);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+}

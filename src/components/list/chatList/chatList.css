@@ -1,0 +1,96 @@
+.chatList {
+    flex: 1;
+    overflow: hidden;
+    /* Remove scroll from the entire container */
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid #dddddd35;
+    border-bottom: 1px solid #dddddd35;
+    padding: 20px;
+    position: sticky;
+    /* Keep the search bar fixed while scrolling */
+    top: 0;
+    /* Stick to the top of the parent container */
+    z-index: 1;
+    /* Ensure the search bar stays above the chat items */
+}
+
+.chatItems {
+    flex: 1;
+    overflow-y: scroll;
+    /* Make only the chat items scrollable */
+    overflow-x: hidden;
+    /* Hide horizontal scroll */
+}
+
+.chatList .searchBar {
+    flex: 1;
+    background-color: rgba(10, 53, 69, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    height: 6vh;
+
+    input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: white;
+    }
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.chatList .add {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(10, 53, 69, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.chatItems .item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 2px solid #dddddd35;
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .texts {
+        height: 10vh;
+        display: grid;
+        grid-template-rows: 25% 70%;
+        margin-top: 5px;
+
+        span {
+            font-weight: 500;
+            font-size: 17px;
+            padding-top: 10px;
+        }
+
+        p {
+            font-size: 13px;
+            font-weight: 300;
+        }
+    }
+}

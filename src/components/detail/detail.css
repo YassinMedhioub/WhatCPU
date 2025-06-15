@@ -1,0 +1,184 @@
+.detail {
+    width: 60vh;
+
+
+    .user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border-bottom: 1px solid #dddddd35;
+        padding: 30px;
+
+        img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .info {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: 70vh;
+        max-height: 70vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: none;
+
+        .option {
+
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                span {
+                    font-size: 17px;
+                }
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    background-color: rgba(10, 53, 69, 0.3);
+                    padding: 10px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+
+            .photos {
+                display: flex;
+                flex-wrap: wrap;
+                /* Allow items to wrap to the next line */
+                gap: 10px;
+                /* Space between images */
+                margin-top: 20px;
+                max-height: 200px;
+                /* Limit height for scrolling */
+                overflow-y: auto;
+                /* Enable vertical scrolling for photos */
+
+                /* Hide scrollbar for photos */
+                &::-webkit-scrollbar {
+                    display: none;
+                    /* Hide scrollbar for Chrome, Safari, and Opera */
+                }
+
+                scrollbar-width: none;
+                /* Firefox */
+
+                .photoItem {
+                    display: flex;
+                    flex-direction: column;
+                    /* Stack image and text vertically */
+                    align-items: center;
+                    /* Center align items */
+                    width: calc(33.33% - 10px);
+                    /* Fixed width for images */
+                    text-align: center;
+                    /* Center text */
+                }
+
+                .photoDetail {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        width: 120px;
+                        /* Size of the image */
+                        height: 120px;
+                        /* Size of the image */
+                        border-radius: 5px;
+                        object-fit: cover;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        color: lightgray;
+                        font-weight: 300;
+                    }
+                }
+
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                    background-color: rgba(10, 53, 69, 0.3);
+                    padding: 5px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    margin-top: 5px;
+                    /* Space between image and download icon */
+                }
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgba(230, 74, 105, 0.553);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(220, 20, 60, 0.796);
+            }
+        }
+    }
+
+
+    /* Modal styles remain unchanged */
+    .modal {
+        position: fixed;
+        width: 30vh;
+        height: 30vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content img {
+        width: 100px;
+        /* Adjusted size to make the image smaller */
+        height: 100px;
+        /* Keep aspect ratio */
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+    }
+}

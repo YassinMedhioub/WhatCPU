@@ -1,0 +1,109 @@
+/* login.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  background: #f6f5f7;
+}
+
+.container {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up {
+  opacity: 1;
+  z-index: 5;
+  transform: translateX(100%);
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.toggle-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: rgba(10, 53, 69, 0.678);
+  color: #fff;
+  text-align: center;
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-panel {
+  padding: 0 40px;
+}
+
+.toggle-right {
+  display: none;
+}
+
+.container.active .toggle-right {
+  display: block;
+}
+
+.container.active .toggle-left {
+  display: none;
+}
+
+input {
+  width: 85%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgba(10, 53, 69, 0.678);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(10, 53, 69, 0.678);
+}
